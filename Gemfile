@@ -7,6 +7,8 @@ end
 
 gem 'solidus'
 gem 'solidus_auth_devise'
+gem 'solidus_print_invoice' , github: 'solidusio-contrib/solidus_print_invoice'
+
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.1.6'

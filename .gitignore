@@ -17,5 +17,7 @@
 /yarn-error.log
 
 .byebug_history
+    
 /.idea/
-.idea/  
+.idea/PANTS4375Shoplifting.iml
+.idea/workspace.xml
