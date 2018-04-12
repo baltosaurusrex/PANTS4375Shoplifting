@@ -1,11 +1,17 @@
 <% @taxons = @taxon && @taxon.parent ? @taxon.parent.children : Spree::Taxon.roots %>
+<div class="row">
 <%= form_tag spree.products_path, method: :get do %>
   <% cache [I18n.locale, @taxons] do %>
+      <div class="input-field col s5">
     <%= select_tag :taxon,
           options_for_select([[t('spree.all_departments'), '']] +
                                 @taxons.map {|t| [t.name, t.id]},
                                 @taxon ? @taxon.id : params[:taxon]), 'aria-label' => 'Taxon' %>
+      </div>
   <% end %>
-  <%= search_field_tag :keywords, params[:keywords], placeholder: t('spree.search') ,class: "search" %>
-  <%= submit_tag t('spree.search'), name: nil , class: "btn"%>
+  <div class="search-wrapper">
+  <%= search_field_tag :keywords, params[:keywords], placeholder: t('spree.search') ,id:"search", class:"col s7" %>
+  </div>
+  <%#= submit_tag t('spree.search'), name: nil , class: "btn"%>
 <% end %>
+</div>

@@ -3,7 +3,9 @@
 
     <li id="link-to-cart" data-hook>
       <noscript>
-        <%= link_to t('spree.cart'), spree.cart_path %>
+        <%= link_to spree.cart_path do%>
+        <%=t('spree.cart')%>
+        <%end%>
       </noscript>&nbsp;
     </li>
   </ul>

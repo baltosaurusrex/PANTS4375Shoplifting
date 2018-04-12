@@ -1,8 +1,9 @@
 <nav class="nav-extended">
   <div class="container">
   <div class="nav-wrapper">
-    <figure id="logo" class="left" data-hook><%= logo %></figure>
-  <ul id="nav-mobile" class="right hide-on-med-and-down" data-hook>
+    <div class="row">
+    <figure id="logo" class="left col s12 m4 offset-m1" data-hook><%= logo %></figure>
+  <ul id="nav-mobile" class="right col m8 hide-on-med-and-down" data-hook>
     <%= render 'spree/shared/login_bar_items' %>
     <li id="home-link" data-hook>
       <%= link_to spree.root_path do%>
@@ -14,6 +15,7 @@
       <%= render partial: 'spree/shared/search' %>
     </li>
   </ul>
+    </div>
   </div>
   <%= render partial: 'spree/shared/main_nav_bar' if store_menu? %>
 </div>

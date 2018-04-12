@@ -18,7 +18,7 @@
 
         <%= render partial: 'spree/shared/sidebar' if content_for? :sidebar %>
 
-        <div id="content" class="columns <%= !content_for?(:sidebar) ? "sixteen" : "twelve omega" %>" data-hook>
+        <div id="content" class="col <%= !content_for?(:sidebar) ? "s12" : "s9" %>" data-hook>
           <%= flash_messages %>
           <%= yield %>
         </div>
@@ -30,7 +30,11 @@
 
     </div>
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/js/materialize.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/js/materialize.min.js">
+        $(document).ready(function () {
+            $('select').formSelect();
+        });
+    </script>
 
   </body>
 </html>
