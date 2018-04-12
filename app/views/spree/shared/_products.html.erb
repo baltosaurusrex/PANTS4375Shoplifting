@@ -22,9 +22,28 @@
 </div>
 
 <% if products.any? %>
-  <ul id="products" class="inline product-listing" data-hook>
-    <% products.each do |product| %>
+<!--  <ul id="products" class="inline product-listing" data-hook>-->
+  <div class="row">
+
+  <% products.each do |product| %>
+
       <% url = spree.product_path(product, taxon_id: @taxon.try(:id)) %>
+
+      <div class="card col s6 m4 l3">
+        <div class="card-image waves-effect waves-light">
+          <%= render('spree/shared/image', image: product.display_image, size: :small, itemprop: "image")%>
+        </div>
+        <div class="card-content">
+          <span class="card-title activator grey-text text-darken-4"><%= product.name%></span>
+          <%= link_to truncate(product.name, length: 50), url, class: 'info', itemprop: "name", title: product.name %>
+        </div>
+        <div class="card-reveal">
+          <span class="card-title activator grey-text text-darken-4"><%= product.name%></span>
+          <p><%= product_description(@product) rescue t('spree.product_has_no_description') %></p>
+        </div>
+      </div>
+
+<% if false%>
       <li id="product_<%= product.id %>" class="columns three <%= cycle("alpha", "secondary", "", "omega secondary", name: "classes") %>" data-hook="products_list_item" itemscope itemtype="http://schema.org/Product">
         <% cache(@taxon.present? ? [I18n.locale, current_pricing_options, @taxon, product] : [I18n.locale, current_pricing_options, product]) do %>
           <div class="product-image">
@@ -41,9 +60,12 @@
           </span>
         <% end %>
       </li>
+<% end %>
+
     <% end %>
+    </div>
     <% reset_cycle("classes") %>
-  </ul>
+<!--  </ul>-->
 <% end %>
 
 <% if paginated_products.respond_to?(:total_pages) %>
