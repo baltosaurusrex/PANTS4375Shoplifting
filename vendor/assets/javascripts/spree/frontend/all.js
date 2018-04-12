@@ -6,5 +6,7 @@
 //
 //= require jquery
 //= require jquery_ujs
+//= require materialize
 //= require spree/frontend
 //= require_tree .
+

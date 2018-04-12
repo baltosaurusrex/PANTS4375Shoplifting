@@ -1,0 +1,11 @@
+<div class="nav-content">
+  <ul class="tabs tabs-transparent" data-hook>
+
+    <li id="link-to-cart" data-hook>
+      <noscript>
+        <%= link_to t('spree.cart'), spree.cart_path %>
+      </noscript>&nbsp;
+    </li>
+  </ul>
+  <script>Spree.fetch_cart('<%= j spree.cart_link_path %>')</script>
+</div>
