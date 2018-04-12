@@ -11,6 +11,10 @@ gem 'solidus_print_invoice' , github: 'solidusio-contrib/solidus_print_invoice'
 gem 'materialize-sass'
 gem 'jquery-rails'
 
+#just for dev
+gem 'pry-rails', group: [:development, :test]
+
+
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.1.6'
 # Use postgresql as the database for Active Record

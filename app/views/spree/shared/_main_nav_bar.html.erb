@@ -4,10 +4,16 @@
     <li id="link-to-cart" data-hook>
       <noscript>
         <%= link_to spree.cart_path do%>
-        <%=t('spree.cart')%>
+          <%=t('spree.cart')%>
+          <i class="small material-icons left">
+            shopping_cart
+          </i>
         <%end%>
       </noscript>&nbsp;
     </li>
   </ul>
   <script>Spree.fetch_cart('<%= j spree.cart_link_path %>')</script>
+  <i class="small material-icons left">
+    shopping_cart
+  </i>
 </div>

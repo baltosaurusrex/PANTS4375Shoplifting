@@ -29,18 +29,52 @@
 
       <% url = spree.product_path(product, taxon_id: @taxon.try(:id)) %>
 
-      <div class="card col s6 m4 l3">
-        <div class="card-image waves-effect waves-light">
-          <%= render('spree/shared/image', image: product.display_image, size: :small, itemprop: "image")%>
-        </div>
-        <div class="card-content">
-          <span class="card-title activator grey-text text-darken-4"><%= product.name%></span>
-          <%= link_to truncate(product.name, length: 50), url, class: 'info', itemprop: "name", title: product.name %>
-        </div>
-        <div class="card-reveal">
-          <span class="card-title activator grey-text text-darken-4"><%= product.name%></span>
-          <p><%= product_description(@product) rescue t('spree.product_has_no_description') %></p>
-        </div>
+      <div class="card col s6 m4 l3" itemscope itemtype="http://schema.org/Product" data-hook="products_list_item">
+        <% cache(@taxon.present? ? [I18n.locale, current_pricing_options, @taxon, product] : [I18n.locale, current_pricing_options, product]) do %>
+          <div class="card-image waves-effect waves-light">
+            <div class="product-image">
+              <%= link_to(render('spree/shared/image', image: product.display_image, size: :small, itemprop: "image"), url, itemprop: 'url') %>
+            </div>
+          </div>
+
+          <div class="card-content">
+
+            <span class="card-title activator grey-text text-darken-4"><!--closed card item title and icon-->
+              <p class="truncate">
+                <%= product.name %>
+              </p>
+            <i class="material-icons right">
+                more_vert
+            </i>
+            </span>
+
+            <p class="truncate"><!--closed card item desc-->
+              <span itemprop="offers" itemscope itemtype="http://schema.org/Offer">
+                  <% if price = product.price_for(current_pricing_options) %>
+                    <span class="price selling" itemprop="price" content="<%= price.to_d %>">
+                      <%= price.to_html %>
+                    </span>
+                  <% end %>
+                <span itemprop="priceCurrency" content="<%= current_pricing_options.currency %>"></span>
+              </span>
+              <%#= binding.pry%>
+              <%= product.description%>
+            </p>
+
+          </div>
+
+          <div class="card-reveal"><!--open card info-->
+            <span class="card-title activator grey-text text-darken-4">
+              <%= truncate(product.name, length: 200) %>
+              <i class="material-icons right">
+                close
+              </i>
+            </span>
+            <p>
+              <%= product_description(@product) rescue t('spree.product_has_no_description') %>
+            </p>
+          </div>
+        <% end %>
       </div>
 
 <% if false%>

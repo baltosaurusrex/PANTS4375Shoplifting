@@ -1,5 +1,8 @@
-# module Spree
-#   module BaseHelper
+module Spree::BaseHelper
+
+  def logo(image_path = Spree::Config[:logo], img_options: {})
+    link_to image_tag(image_path, img_options), spree.root_path
+  end
 #
 #     def taxons_tree(root_taxon, current_taxon, max_level = 1)
 #       return '' if max_level < 1 || root_taxon.children.empty?
@@ -15,5 +18,5 @@
 #       end
 #     end
 #
-#   end
-# end
+
+end

@@ -8,10 +8,20 @@
  *= require_tree .
 */
 @import "materialize/components/color-variables";
-$primary-color: color("red", "lighten-2") !default;
-$secondary-color: color("orange", "base") !default;
+$primary-color: color("lime", "darken-2") !default;
+$secondary-color: color("amber", "base") !default;
 @import "materialize";
 @import "https://fonts.googleapis.com/icon?family=Material+Icons";
+
+body {
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+}
+
+main{
+  flex: 1 0 auto;
+}
 
 .card{
   margin: 100px;

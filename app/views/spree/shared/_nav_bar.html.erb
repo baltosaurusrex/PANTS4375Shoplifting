@@ -1,22 +1,32 @@
-<nav class="nav-extended">
-  <div class="container">
+<nav class=" nav-extended">
   <div class="nav-wrapper">
-    <div class="row">
-    <a href="#" class="brand-logo left col s12 m4 offset-m1">Some Text</a>
-  <ul id="nav-mobile" class="right col m8 hide-on-med-and-down" data-hook>
-    <%= render 'spree/shared/login_bar_items' %>
-    <li id="home-link" data-hook>
-      <%= link_to spree.root_path do%>
-       <%= t('spree.home')%>
-        <i class="small left material-icons">home</i>
-      <%end%>
-    </li>
-    <li id="search-bar" data-hook>
-      <%= render partial: 'spree/shared/search' %>
-    </li>
-  </ul>
+   <div class="row">
+
+     <a id="logo-container" class="col l4 brand-logo" data-hook>
+       <%= logo img_options: {width: '136'}%>
+     </a>
+
+     <ul id="nav-mobile" class="col l8 hide-on-small-only" data-hook>
+
+        <li>
+          <%= render 'spree/shared/login_bar_items' %>
+        </li>
+
+        <li id="home-link" data-hook>
+          <%= link_to spree.root_path do%>
+           <%= t('spree.home')%>
+            <i class="small left material-icons">home</i>
+          <%end%>
+        </li>
+
+        <li id="search-bar" data-hook>
+          <%= render partial: 'spree/shared/search' %>
+        </li>
+
+      </ul>
+
     </div>
   </div>
+
   <%= render partial: 'spree/shared/main_nav_bar' if store_menu? %>
-</div>
 </nav>
