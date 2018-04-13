@@ -8,6 +8,7 @@ end
 gem 'solidus'
 gem 'solidus_auth_devise'
 gem 'solidus_print_invoice' , github: 'solidusio-contrib/solidus_print_invoice'
+gem 'solidus_i18n', github: 'solidusio-contrib/solidus_i18n', branch: 'master'
 gem 'solidus_bootstrap_frontend', git: 'https://github.com/2beDigital/solidus_bootstraps_frontend.git', branch: 'master'
 
 

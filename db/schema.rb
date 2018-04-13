@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180409185630) do
+ActiveRecord::Schema.define(version: 20180413044203) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -933,6 +933,7 @@ ActiveRecord::Schema.define(version: 20180409185630) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string "cart_tax_country_iso"
+    t.text "preferences"
     t.index ["code"], name: "index_spree_stores_on_code"
     t.index ["default"], name: "index_spree_stores_on_default"
   end
