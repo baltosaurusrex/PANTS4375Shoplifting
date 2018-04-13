@@ -1,4 +1,24 @@
 GIT
+  remote: https://github.com/2beDigital/solidus_bootstraps_frontend.git
+  revision: a96bf20abc2190fdcbed7d781706394c80f5e619
+  branch: master
+  specs:
+    solidus_auth_devise_bootstrap (0.1.0)
+      solidus_auth_devise
+      solidus_bootstrap
+    solidus_bootstrap (0.2.1)
+      bootstrap-kaminari-views (~> 0.0.5)
+      bootstrap-sass (>= 3.3.5.1)
+      sass-rails (>= 5.0)
+      solidus_core (~> 2.1)
+      solidus_frontend (~> 2.1)
+    solidus_bootstrap_frontend (0.1.1)
+      bootstrap-sass (~> 3.3, >= 3.3.7)
+      sass-rails (>= 5.0)
+      solidus_auth_devise_bootstrap
+      solidus_bootstrap
+
+GIT
   remote: https://github.com/solidusio-contrib/solidus_print_invoice.git
   revision: f766912d13882162e9509a7ec925ba7bed6f0dc7
   specs:
@@ -64,6 +84,12 @@ GEM
       activerecord (>= 4.0.0, < 5.3)
     bcrypt (3.1.11)
     bindex (0.5.0)
+    bootstrap-kaminari-views (0.0.5)
+      kaminari (>= 0.13)
+      rails (>= 3.1)
+    bootstrap-sass (3.3.7)
+      autoprefixer-rails (>= 5.2.1)
+      sass (>= 3.3.4)
     builder (3.2.3)
     byebug (10.0.2)
     cancancan (1.17.0)
@@ -370,6 +396,7 @@ DEPENDENCIES
   selenium-webdriver
   solidus
   solidus_auth_devise
+  solidus_bootstrap_frontend!
   solidus_print_invoice!
   spring
   spring-watcher-listen (~> 2.0.0)

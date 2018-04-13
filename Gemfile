@@ -8,6 +8,7 @@ end
 gem 'solidus'
 gem 'solidus_auth_devise'
 gem 'solidus_print_invoice' , github: 'solidusio-contrib/solidus_print_invoice'
+gem 'solidus_bootstrap_frontend', git: 'https://github.com/2beDigital/solidus_bootstraps_frontend.git', branch: 'master'
 
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
