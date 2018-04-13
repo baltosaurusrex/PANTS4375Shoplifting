@@ -11,7 +11,7 @@ Spree.config do |config|
   config.mails_from = "store@example.com"
 
   #pagination limits
-  config.products_per_page = 3
+  config.products_per_page = 16
 
   # Uncomment to stop tracking inventory levels in the application
   # config.track_inventory_levels = false
@@ -25,7 +25,7 @@ Spree.config do |config|
   # Frontend:
 
   # Custom logo for the frontend
-   config.logo = "logo/logo.png"
+   config.logo = "logo/logo240.png"
 
   # Template to use when rendering layout
   # config.layout = "spree/layouts/spree_application"

@@ -1,32 +1,28 @@
 <nav class=" nav-extended">
+
   <div class="nav-wrapper">
-   <div class="row">
 
-     <a id="logo-container" class="col l4 brand-logo" data-hook>
-       <%= logo img_options: {width: '136'}%>
-     </a>
+       <%= logo img_options: {class: "brand-logo responsive-img right"}%>
 
-     <ul id="nav-mobile" class="col l8 hide-on-small-only" data-hook>
+     <ul id="nav-mobile" class="left hide-on-small-only">
 
-        <li>
-          <%= render 'spree/shared/login_bar_items' %>
-        </li>
+       <li id="search-bar" data-hook>
+         <%= render partial: 'spree/shared/search' %>
+       </li>
 
-        <li id="home-link" data-hook>
-          <%= link_to spree.root_path do%>
-           <%= t('spree.home')%>
-            <i class="small left material-icons">home</i>
-          <%end%>
-        </li>
+      <li>
+        <%= render 'spree/shared/login_bar_items' %>
+      </li>
 
-        <li id="search-bar" data-hook>
-          <%= render partial: 'spree/shared/search' %>
-        </li>
+      <li id="home-link" data-hook>
+        <%= link_to spree.root_path do%>
+         <%= t('spree.home')%>
+          <i class="small left material-icons">home</i>
+        <%end%>
+      </li>
 
       </ul>
 
-    </div>
   </div>
-
   <%= render partial: 'spree/shared/main_nav_bar' if store_menu? %>
 </nav>
