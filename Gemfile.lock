@@ -1,6 +1,7 @@
 GIT
-  remote: https://github.com/2beDigital/solidus_bootstraps_frontend.git
-  revision: a96bf20abc2190fdcbed7d781706394c80f5e619
+  remote: https://github.com/codetain/solidus_bootstraps_frontend.git
+  revision: 9830e3b8b65047ceb85a9855f2ed17d792a35332
+  ref: 9830e3b
   branch: master
   specs:
     solidus_auth_devise_bootstrap (0.1.0)
