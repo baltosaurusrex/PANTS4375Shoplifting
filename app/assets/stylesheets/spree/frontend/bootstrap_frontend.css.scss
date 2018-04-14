@@ -1,5 +1,5 @@
 //Add your custom bootstrap variables here, see https://github.com/twbs/bootstrap-sass/blob/master/assets/stylesheets/bootstrap/_variables.scss for full list of variables.
-$navbar-default-bg: #112233;
+$navbar-default-bg: #343133;
 
 $icon-font-path: "../../bootstrap/";
 @import "bootstrap";
@@ -7,7 +7,8 @@ $icon-font-path: "../../bootstrap/";
 // -- Spree Custom Header and Footer ---------------------
 #spree-header {
   background: #424242 asset-url('headerbg.png') center center;
-  background-size: contain;
+  background-size: cover;
+  background-repeat: no-repeat;
   margin-bottom: $line-height-computed;
   #header {
     background: rgba(9, 22, 33, 0.4);
@@ -37,7 +38,7 @@ $icon-font-path: "../../bootstrap/";
 }
 
 .footer {
-  background: $gray-dark;
+  background: $navbar-default-bg;
   padding-top: $padding-base-horizontal;
   margin-top: $line-height-computed;
   color: #fff;
