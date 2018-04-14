@@ -5,12 +5,11 @@ git_source(:github) do |repo_name|
   "https://github.com/#{repo_name}.git"
 end
 
-ruby "2.4.1" 
+ruby "~> 2.4.1" 
 
 gem 'solidus'
 gem 'solidus_auth_devise'
 gem 'solidus_print_invoice' , github: 'solidusio-contrib/solidus_print_invoice'
-gem 'solidus_i18n', github: 'solidusio-contrib/solidus_i18n', branch: 'master'
 gem 'solidus_bootstrap_frontend', git: 'https://github.com/codetain/solidus_bootstraps_frontend.git', branch: 'master', ref: '9830e3b'
 
 
