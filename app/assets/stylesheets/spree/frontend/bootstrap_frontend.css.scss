@@ -6,7 +6,7 @@ $icon-font-path: "../../bootstrap/";
 
 // -- Spree Custom Header and Footer ---------------------
 #spree-header {
-  background: #424242 asset-url('headerbg.png') center center;
+  background: #343133 asset-url('headerbg.png') center center;
   background-size: cover;
   background-repeat: no-repeat;
   margin-bottom: $line-height-computed;
@@ -20,11 +20,11 @@ $icon-font-path: "../../bootstrap/";
       width: 306px;
     }
   }
-  .nav a {
+  .nav li a{
     color: #fff;
     bold
     &:hover {
-      background:rgba(9, 22, 33, 0.4);
+      background:rgba(100,100,0 , 0.4);
     }
   }
   .navbar {
