@@ -24,6 +24,9 @@ Spree.config do |config|
   # Custom logo for the frontend
   config.logo = "logo/logo600.png"
 
+  Spree::PrintInvoice::Config.set(print_invoice_logo_path: :logo)
+  Spree::PrintInvoice::Config.set(print_buttons: "invoice,packaging_slip")
+
   # Template to use when rendering layout
   # config.layout = "spree/layouts/spree_application"
 
